@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-500 py-2 px-8 text-white font-bold rounded-full hover:bg-primary-600 transition-colors ease-in duration-200;
+  }
+
+  .btn-secondary {
+    @apply border border-primary-500 py-2 px-8 text-primary-500 font-bold rounded-full hover:bg-primary-500 hover:text-white transition-colors ease-in duration-200;
+  }
+
+  .btn-link {
+    @apply text-primary-500 hover:underline underline-offset-4 flex justify-center items-center gap-2;
+  }
+
+  .flag {
+    background: url("/images/flags_responsive.png") no-repeat;
+    background-size: 100%;
+  }
+
+  span.flag {
+    width: 22px;
+    height: 15px;
+    display: inline-block;
+    border: 1px solid #ccc;
+  }
+
+  .title {
+    @apply text-justify font-bold text-xl mb-6;
+  }
+
+  .card {
+    @apply bg-white text-center p-14 mb-10;
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply px-16;
+  }
+
+  blockquote {
+    direction: rtl;
+    position: relative;
+
+    &::before {
+      font-family: Arial;
+      content: "\201C";
+      color: rgb(83, 104, 5);
+      font-size: 64px;
+      position: absolute;
+      right: 20px;
+      top: 24px;
+    }
+  }
+
+  .pattern {
+    background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='29' height='50.115' patternTransform='scale(1) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0, 0%, 96%, 1)'/><path d='M14.498 16.858L0 8.488.002-8.257l14.5-8.374L29-8.26l-.002 16.745zm0 50.06L0 58.548l.002-16.745 14.5-8.373L29 41.8l-.002 16.744zM28.996 41.8l-14.498-8.37.002-16.744L29 8.312l14.498 8.37-.002 16.745zm-29 0l-14.498-8.37.002-16.744L0 8.312l14.498 8.37-.002 16.745z'  stroke-width='1' stroke='hsla(0, 0%, 91%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+  }
+
+  .pattern-2 {
+    background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='69.283' height='40' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(153, 56%, 33%, 1)'/><path d='M46.189-20L57.736 0M46.189 20l11.547 20m-46.189 0l11.547 20M11.547 0l11.547 20m40.415 30H40.415M28.868 30H5.774m23.094-40H5.774m57.735 20H40.415m0 20L28.868 50m11.547-60L28.868 10m46.188 0L63.509 30M5.774 10L-5.773 30m75.056 10H46.189L34.64 20 46.19 0h23.094C73.13 6.667 76.98 13.333 80.83 20zM57.736 60H34.64L23.094 40l11.547-20h23.095c3.848 6.667 7.698 13.333 11.547 20L57.736 60zm0-40H34.64L23.094 0l11.547-20h23.095L69.283 0c-3.87 6.7-8.118 14.06-11.547 20zM34.64 60H11.547L0 40l11.547-20h23.094L46.19 40 34.64 60zm0-40H11.547L0 0l11.547-20h23.094L46.19 0 34.64 20zM23.094 40H0l-5.773-10-5.774-10L0 0h23.094l11.547 20-11.547 20z'  stroke-width='1' stroke='hsla(153, 56%, 29%, 1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>");
+  }
+
+  .hero-height {
+    @apply h-[calc(100vh-theme(space.header-height))];
+  }
+
+  .dua-card {
+    &:hover {
+      h2 {
+        @apply text-primary-500;
+      }
+    }
+  }
+
+  .dua-image {
+    filter: invert(37%) sepia(64%) saturate(453%) hue-rotate(101deg)
+      brightness(101%) contrast(89%);
+  }
+
+  .card-shadow {
+    box-shadow: 0px 0px 14.7px rgba(0, 0, 0, 0.064),
+      0px 0px 117px rgba(0, 0, 0, 0.05);
+  }
+
+  .green-gradient {
+    background-image: radial-gradient(
+      circle,
+      #25855a,
+      #238e5e,
+      #229763,
+      #1fa167,
+      #1daa6b
+    );
+  }
+
+  .link-list {
+    @apply relative bg-primary-400 text-white px-3 py-2 flex justify-center items-center hover:bg-primary-400;
+
+    &::before {
+      content: "";
+
+      @apply absolute top-0 right-0 h-full w-2 bg-primary-500;
+    }
+  }
+
+  .pagination-button {
+    @apply border border-primary-500 px-3 py-1 text-primary-600;
+  }
+
+  .pagination-button-active {
+    @apply bg-primary-500 text-white;
+  }
+
+  .pagination-button-disable {
+    @apply bg-primary-300 text-white cursor-not-allowed;
+  }
+}
