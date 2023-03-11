@@ -2,53 +2,6 @@ import Link from "next/link"
 import React, { useState } from "react"
 import ReactPaginate from "react-paginate"
 
-const currentCitiesOfCountryData: {
-  id: number
-  link: string
-  name: string
-}[] = [
-  {
-    id: 1,
-    link: "/",
-    name: "جنوب تانجيرانج"
-  },
-  {
-    id: 2,
-    link: "/",
-    name: "بيكاسي"
-  },
-  {
-    id: 3,
-    link: "/",
-    name: "تانجيرانج"
-  },
-  {
-    id: 4,
-    link: "/",
-    name: "ديبوك"
-  },
-  {
-    id: 5,
-    link: "/",
-    name: "بوجور"
-  },
-  {
-    id: 6,
-    link: "/",
-    name: "هجوم"
-  },
-  {
-    id: 7,
-    link: "/",
-    name: "سوكابومي"
-  },
-  {
-    id: 8,
-    link: "/",
-    name: "سيليجون"
-  }
-]
-
 type ItemsProps = {
   currentItems: {
     id: number
@@ -75,7 +28,14 @@ function Items({ currentItems }: ItemsProps) {
   )
 }
 
-export default function Pagination(props: { itemsPerPage: number }) {
+export default function Pagination(props: {
+  itemsPerPage: number
+  data: {
+    id: number
+    link: string
+    name: string
+  }[]
+}) {
   // Here we use item offsets; we could also use page offsets
   // following the API or data you're working with.
   const [itemOffset, setItemOffset] = useState(0)
@@ -85,15 +45,12 @@ export default function Pagination(props: { itemsPerPage: number }) {
   // from an API endpoint with useEffect and useState)
   const endOffset = itemOffset + props.itemsPerPage
   console.log(`Loading items from ${itemOffset} to ${endOffset}`)
-  const currentItems = currentCitiesOfCountryData.slice(itemOffset, endOffset)
-  const pageCount = Math.ceil(
-    currentCitiesOfCountryData.length / props.itemsPerPage
-  )
+  const currentItems = props.data.slice(itemOffset, endOffset)
+  const pageCount = Math.ceil(props.data.length / props.itemsPerPage)
 
   // Invoke when user click to request another page.
   const handlePageClick = (event: any) => {
-    const newOffset =
-      (event.selected * props.itemsPerPage) % currentCitiesOfCountryData.length
+    const newOffset = (event.selected * props.itemsPerPage) % props.data.length
     console.log(
       `User requested page number ${event.selected}, which is offset ${newOffset}`
     )

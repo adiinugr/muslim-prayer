@@ -36,6 +36,45 @@
   .card {
     @apply bg-white text-center p-14 mb-10;
   }
+
+  .prayer-adzan-table,
+  .prayer-time-table {
+    thead {
+      @apply bg-primary-300 text-white;
+
+      th {
+        @apply px-3 py-1 font-medium;
+      }
+    }
+
+    tbody {
+      tr {
+        td {
+          @apply px-3 py-1;
+        }
+      }
+
+      tr:nth-child(even) {
+        @apply bg-gray-200;
+      }
+    }
+  }
+
+  .prayer-details-table {
+    span {
+      @apply font-semibold;
+    }
+  }
+
+  .prayer-time-table {
+    tbody {
+      tr {
+        td:first-child {
+          @apply bg-primary-200 text-right;
+        }
+      }
+    }
+  }
 }
 
 @layer utilities {

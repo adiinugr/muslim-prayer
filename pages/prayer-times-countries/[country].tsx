@@ -55,9 +55,56 @@ const prayerTimesData: {
   }
 ]
 
+const currentCitiesOfCountryData: {
+  id: number
+  link: string
+  name: string
+}[] = [
+  {
+    id: 1,
+    link: "/",
+    name: "جنوب تانجيرانج"
+  },
+  {
+    id: 2,
+    link: "/",
+    name: "بيكاسي"
+  },
+  {
+    id: 3,
+    link: "/",
+    name: "تانجيرانج"
+  },
+  {
+    id: 4,
+    link: "/",
+    name: "ديبوك"
+  },
+  {
+    id: 5,
+    link: "/",
+    name: "بوجور"
+  },
+  {
+    id: 6,
+    link: "/",
+    name: "هجوم"
+  },
+  {
+    id: 7,
+    link: "/",
+    name: "سوكابومي"
+  },
+  {
+    id: 8,
+    link: "/",
+    name: "سيليجون"
+  }
+]
+
 type Props = {}
 
-export default function PrayerTimesCities({}: Props) {
+export default function PrayerTimesCountries({}: Props) {
   return (
     <Layout>
       <div className="mt-16 p-10 rounded-3xl pattern mb-12">
@@ -132,7 +179,7 @@ export default function PrayerTimesCities({}: Props) {
       </div>
 
       <div>
-        <Pagination itemsPerPage={4} />
+        <Pagination itemsPerPage={4} data={currentCitiesOfCountryData} />
       </div>
     </Layout>
   )
