@@ -37,13 +37,29 @@
     @apply bg-white text-center p-14 mb-10;
   }
 
+  .dua-card {
+    &:hover {
+      @apply bg-primary-300;
+
+      .dua-image {
+        @apply svg-white;
+      }
+
+      h2 {
+        @apply text-white;
+      }
+    }
+  }
+
   .prayer-adzan-table,
-  .prayer-time-table {
+  .prayer-time-table,
+  .hijri-date-table,
+  .hijri-calendar-table {
     thead {
       @apply bg-primary-300 text-white;
 
       th {
-        @apply px-3 py-1 font-medium;
+        @apply px-3 py-2 font-medium;
       }
     }
 
@@ -78,6 +94,20 @@
 }
 
 @layer utilities {
+  .sidebar-menu {
+    li {
+      .sidebar-icon {
+        @apply svg-white;
+      }
+
+      &:hover {
+        .sidebar-icon {
+          @apply svg-primary;
+        }
+      }
+    }
+  }
+
   .container {
     @apply px-16;
   }
@@ -109,15 +139,17 @@
     @apply h-[calc(100vh-theme(space.header-height))];
   }
 
-  .dua-card {
-    &:hover {
-      h2 {
-        @apply text-primary-500;
-      }
-    }
+  .dua-image {
+    filter: invert(37%) sepia(64%) saturate(453%) hue-rotate(101deg)
+      brightness(101%) contrast(89%);
   }
 
-  .dua-image {
+  .svg-white {
+    filter: invert(98%) sepia(2%) saturate(561%) hue-rotate(254deg)
+      brightness(119%) contrast(100%);
+  }
+
+  .svg-primary {
     filter: invert(37%) sepia(64%) saturate(453%) hue-rotate(101deg)
       brightness(101%) contrast(89%);
   }

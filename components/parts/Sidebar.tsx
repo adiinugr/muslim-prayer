@@ -10,33 +10,15 @@ const menuData: { id: number; name: string; iconUrl: string; link: string }[] =
   [
     {
       id: 1,
-      name: "مواقيت الصلاة",
-      iconUrl: "/icons/clock.png",
-      link: "/prayer-times"
+      name: "تحويل التاريخ",
+      iconUrl: "/icons/calendar.svg",
+      link: "/today-hijri-date"
     },
     {
       id: 2,
-      name: "إتجاه القبلة",
-      iconUrl: "/icons/kaaba.png",
-      link: "/qibla"
-    },
-    {
-      id: 3,
-      name: "القمر اليوم",
-      iconUrl: "/icons/islam.png",
-      link: "/moon"
-    },
-    {
-      id: 4,
-      name: "حاسبة الزكاة",
-      iconUrl: "/icons/calculator.png",
-      link: "/zakat-calculator"
-    },
-    {
-      id: 5,
-      name: "التاريخ الهجري",
-      iconUrl: "/icons/calendar.png",
-      link: "/today-hijri-date"
+      name: " الدعاء والأذكار",
+      iconUrl: "/icons/doa.svg",
+      link: "/dua-and-azkar"
     }
   ]
 
@@ -50,7 +32,13 @@ export default function Sidebar({ openSidebar }: Props) {
       <div className="flex flex-col items-center gap-6 py-10">
         <div className="flex flex-col items-center">
           <div className="w-24 h-28 relative mb-2">
-            <Image src="/images/logo.png" fill sizes="20" alt="logo" />
+            <Image
+              src="/icons/mosque.svg"
+              fill
+              sizes="20"
+              alt="logo"
+              className="svg-white"
+            />
           </div>
           <Link href="/" className="text-2xl font-bold">
             مواقيت الصلاة
@@ -60,25 +48,22 @@ export default function Sidebar({ openSidebar }: Props) {
           </Link>
         </div>
         <div className="w-full px-8">
-          <ul className="">
+          <ul className="sidebar-menu">
             {menuData.map((menu) => (
-              <li
-                key={menu.id}
-                className="flex flex-row-reverse gap-2 items-center w-full px-2 py-3 rounded-md hover:bg-white hover:text-primary-500 transition-colors duration-300 ease-in-out"
-              >
-                <Link
-                  href={menu.link}
-                  className="inline-block w-full text-right"
-                >
-                  {menu.name}
-                </Link>
-                <Image
-                  src={menu.iconUrl}
-                  width={26}
-                  height={26}
-                  alt="menu icon"
-                />
-              </li>
+              <Link key={menu.id} href={menu.link}>
+                <li className="flex flex-row-reverse gap-2 items-center w-full px-4 py-3 rounded-md hover:bg-white hover:text-primary-500 transition-colors duration-300 ease-in-out">
+                  <div className="flex items-center gap-4 w-full text-right">
+                    <Image
+                      src={menu.iconUrl}
+                      width={26}
+                      height={26}
+                      className="sidebar-icon"
+                      alt="menu icon"
+                    />
+                    {menu.name}
+                  </div>
+                </li>
+              </Link>
             ))}
           </ul>
         </div>

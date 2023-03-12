@@ -10,7 +10,7 @@ export default function Footer({}: Props) {
         <Link href="https://symbolcopyright.com/" target="_blank" title="©">
           ©
         </Link>{" "}
-        2011 جميع الحقوق محفوظة لموقع{" "}
+        2023 جميع الحقوق محفوظة لموقع{" "}
         <Link className="text-white font-semibold" href="/">
           Prayer Web
         </Link>

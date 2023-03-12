@@ -1,6 +1,7 @@
 import React from "react"
 import Link from "next/link"
 import { Spin as Hamburger } from "hamburger-react"
+import Image from "next/image"
 
 type Props = {
   setOpenSidebar: (value: boolean) => void
@@ -23,7 +24,16 @@ export default function Header({ setOpenSidebar }: Props) {
       >
         الرئيسية
       </Link>
-      <div>Logo</div>
+      <div className="svg-primary relative h-12 w-20">
+        <Link href="/">
+          <Image
+            src="icons/mosque.svg"
+            alt="prayer website"
+            fill
+            className="left-0 top-0 h-20"
+          />
+        </Link>
+      </div>
     </header>
   )
 }
