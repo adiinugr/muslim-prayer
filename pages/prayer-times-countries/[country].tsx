@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout"
+import PrayerTime from "@/components/parts/PrayerTime"
 import Pagination from "@/components/utils/Pagination"
 import Image from "next/image"
 import Link from "next/link"
@@ -106,7 +107,7 @@ type Props = {}
 
 export default function PrayerTimesCountries({}: Props) {
   return (
-    <Layout>
+    <Layout headTitle="Prayer Times Country">
       <div className="mt-16 p-10 rounded-3xl pattern mb-12">
         <h1 className="text-center text-4xl font-bold text-primary-600">
           مواقيت الصلاة في مدن السعودية
@@ -120,39 +121,21 @@ export default function PrayerTimesCountries({}: Props) {
           </Link>
         </h2>
       </div>
-      <div className="mt-6 mb-10 flex justify-between items-end">
-        <div className="pattern-2 rounded-3xl p-8">
+      <div className="mt-6 mb-10 flex flex-col lg:flex-row justify-between items-end">
+        <div className="pattern-2 rounded-3xl p-8 w-full lg:w-auto text-center mb-4 lg:mb-0">
           <div className="text-white text-4xl font-bold mb-3">04:56:31</div>
           <div className="text-cream text-lg">الوقت المتبقي لأذان المَغرب</div>
         </div>
 
-        <div>
+        <div className="w-full lg:w-auto">
           <time className="text-2xl text-gray-600 font-bold mb-2">
             11:29:33 PM
           </time>
           <div className="summary">الوقت الأن في مكه</div>
         </div>
       </div>
-      <ul className="grid grid-cols-6 gap-4 mb-10">
-        {prayerTimesData.map((data) => (
-          <li
-            key={data.id}
-            className={`flex flex-col justify-center items-center rounded-xl border-2 border-cream font-bold p-4 ${
-              data.isCurrentTime && "text-white shadow-md green-gradient"
-            }`}
-          >
-            <time>{data.time}</time>
-            <Image
-              src={data.iconUrl}
-              width="45"
-              height="45"
-              alt="shalat icon"
-            />
-            <div>{data.name}</div>
-          </li>
-        ))}
-      </ul>
-      <div className="grid grid-cols-4 gap-4">
+      <PrayerTime data={prayerTimesData} />
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div>
           <b>طريقة الحساب:</b>
           <br />

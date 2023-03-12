@@ -4,15 +4,16 @@ import Header from "./parts/Header"
 import Sidebar from "./parts/Sidebar"
 import Footer from "./parts/Footer"
 
-type Props = { children: ReactNode }
+type Props = { headTitle?: string; headDesc?: string; children: ReactNode }
 
-export default function Layout({ children }: Props) {
+export default function Layout({ headTitle, headDesc, children }: Props) {
   const [openSidebar, setOpenSidebar] = useState(false)
 
   return (
     <>
       <Head>
-        <title>Title of The Page</title>
+        <title>{headTitle}</title>
+        <meta name="description" content={headDesc} key="desc" />
       </Head>
       <div className="overflow-hidden relative">
         <Header setOpenSidebar={setOpenSidebar} />

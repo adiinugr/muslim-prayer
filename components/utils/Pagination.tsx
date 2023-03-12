@@ -14,7 +14,7 @@ function Items({ currentItems }: ItemsProps) {
   return (
     <div className="card border border-gray-200 rounded-3xl bg-white">
       <h3 className="title text-primary-600">مواقيت الصلاة لدول العالم</h3>
-      <ul className="grid grid-cols-4 gap-6 text-justify">
+      <ul className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-justify">
         {currentItems &&
           currentItems.map((item) => (
             <li className="text-justify" key={item.id}>

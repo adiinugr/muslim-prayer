@@ -5,6 +5,7 @@ import { MdLocationOn } from "react-icons/md"
 import { HiOutlineArrowLeft } from "react-icons/hi"
 
 import Layout from "@/components/Layout"
+import PrayerTime from "@/components/parts/PrayerTime"
 
 type Props = {}
 
@@ -261,18 +262,13 @@ const worldCitiesData: {
 
 export default function Home({}: Props) {
   return (
-    <Layout>
+    <Layout headTitle="Muslim Prayer">
       <div className="hero-height py-12">
-        <div className="h-full py-16 px-24 pattern rounded-[2rem] flex justify-between items-center">
-          <div className="w-1/2">
-            <Image
-              src="/images/hero-image.svg"
-              alt="muslim prayer"
-              width={280}
-              height={380}
-            />
+        <div className="h-full py-16 px-8 lg:px-24 pattern rounded-[2rem] flex flex-col lg:flex-row justify-between items-center">
+          <div className="relative w-full lg:w-1/2 h-full mb-10 lg:mb-0">
+            <Image src="/images/hero-image.svg" alt="muslim prayer" fill />
           </div>
-          <div className="w-1/2">
+          <div className="w-full lg:w-1/2">
             <h1 className="text-3xl text-primary-600 font-bold mb-4">
               مواقيت الصلاة
             </h1>
@@ -310,7 +306,9 @@ export default function Home({}: Props) {
         <div className="mt-6 mb-10">
           <div className="pattern-2 rounded-3xl p-12 mb-4">
             <div className="text-cream text-3xl mb-3">الفجْر</div>
-            <div className="text-white text-6xl font-bold mb-3">04:56:31</div>
+            <div className="text-white text-5xl lg:text-6xl font-bold mb-3">
+              04:56:31
+            </div>
             <div className="text-cream text-lg">الوقت المتبقي لأذان الفجْر</div>
           </div>
           <div>
@@ -320,26 +318,8 @@ export default function Home({}: Props) {
             <div className="summary">الوقت الأن في سورابايا</div>
           </div>
         </div>
-        <ul className="grid grid-cols-6 gap-4 mb-10">
-          {prayerTimesData.map((data) => (
-            <li
-              key={data.id}
-              className={`flex flex-col justify-center items-center rounded-xl border-2 border-cream font-bold p-4 ${
-                data.isCurrentTime && "text-white shadow-md green-gradient"
-              }`}
-            >
-              <time>{data.time}</time>
-              <Image
-                src={data.iconUrl}
-                width="45"
-                height="45"
-                alt="shalat icon"
-              />
-              <div>{data.name}</div>
-            </li>
-          ))}
-        </ul>
-        <div className="grid grid-cols-4 gap-4">
+        <PrayerTime data={prayerTimesData} />
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           <div>
             <b>طريقة الحساب:</b>
             <br />
@@ -373,7 +353,7 @@ export default function Home({}: Props) {
 
       <div className="card border border-gray-200 rounded-3xl bg-white">
         <h3 className="title text-primary-600">مدن قريبة في إندونيسيا</h3>
-        <ul className="grid grid-cols-4 gap-6 mb-8">
+        <ul className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {nearbyCitiesData.map((data) => (
             <li className="text-justify" key={data.id}>
               <Link className="link-list" href={data.link}>
@@ -390,7 +370,7 @@ export default function Home({}: Props) {
         </div>
       </div>
 
-      <div className="card mb-0 todayHadith">
+      <div className="card mb-0 px-0">
         <h3 className="title mb-2 text-primary-600">حديث اليوم</h3>
         <p className="text-justify text-sm text-gray-600 mb-2">
           <b>المصدر:</b> صحيح البخاري,2-كتاب الإيمان , رقم الحديث 10
@@ -416,7 +396,7 @@ export default function Home({}: Props) {
         </blockquote>
       </div>
 
-      <div className="card">
+      <div className="card px-0">
         <h3 className="title mb-2 text-primary-600">
           دعاء اليوم (أذكار الصباح)
         </h3>
@@ -439,7 +419,7 @@ export default function Home({}: Props) {
 
       <div className="card border border-gray-200 rounded-3xl bg-white">
         <h3 className="title text-primary-600">مواقيت الصلاة لدول العالم</h3>
-        <ul className="grid grid-cols-4 gap-6 text-justify">
+        <ul className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-justify">
           {worldPrayerData.map((data) => (
             <li className="text-justify" key={data.id}>
               <Link className="link-list" href={data.link}>
@@ -455,7 +435,7 @@ export default function Home({}: Props) {
       </div>
 
       <div className="card border border-gray-200 rounded-3xl bg-white">
-        <ul className="nearby-cities grid grid-cols-4 gap-4 mb-4">
+        <ul className="nearby-cities grid grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
           {worldCitiesData.map((data) => (
             <li className="text-justify" key={data.id}>
               <Link className="link-list" href={data.link}>

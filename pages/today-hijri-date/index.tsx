@@ -5,7 +5,7 @@ type Props = {}
 
 export default function TodayHijriDate({}: Props) {
   return (
-    <Layout>
+    <Layout headTitle="Today Hijri Date">
       <div className="mt-16 p-10 rounded-3xl pattern mb-12">
         <h1 className="text-center text-4xl font-bold text-primary-600">
           تاريخ اليوم هجري
@@ -71,7 +71,6 @@ export default function TodayHijriDate({}: Props) {
             </tr>
           </thead>
           <tbody>
-            {" "}
             <tr>
               <td>الأحد، ١٢ مارس ٢٠٢٣ م</td>
               <td>

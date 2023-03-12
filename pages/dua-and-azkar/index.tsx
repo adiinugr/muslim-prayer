@@ -201,15 +201,15 @@ type Props = {}
 
 export default function DuaAndAzkar({}: Props) {
   return (
-    <Layout>
-      <div className="mt-16 p-16 rounded-3xl pattern">
+    <Layout headTitle="Dua and Azkar">
+      <div className="mt-16 p-6 lg:p-16 rounded-3xl pattern">
         <h1 className="text-center font-semibold text-4xl mb-12 text-primary-600">
           الدعاء والأذكار
         </h1>
-        <div className="grid grid-cols-4 gap-10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
           {duaAndAzkarData.map((data) => (
             <Link key={data.id} href={data.link}>
-              <div className="dua-card flex flex-col justify-center items-center bg-white card-shadow p-6 rounded-xl">
+              <div className="dua-card flex flex-col justify-center items-center h-full bg-white card-shadow p-6 rounded-xl">
                 <Image
                   src={data.imageUrl}
                   alt="dua and azkar"

@@ -9,7 +9,7 @@ type Props = {
 
 export default function Header({ setOpenSidebar }: Props) {
   return (
-    <header className="bg-white text-gray-900 w-full flex justify-between items-center h-header-height px-16 fixed z-20 shadow-sm">
+    <header className="bg-white text-gray-900 w-full flex justify-between items-center h-header-height px-6 lg:px-16 fixed z-20 shadow-sm">
       <button className="rounded-md hover:bg-primary-500 hover:text-white">
         <Hamburger
           size={26}
@@ -24,16 +24,17 @@ export default function Header({ setOpenSidebar }: Props) {
       >
         الرئيسية
       </Link>
-      <div className="svg-primary relative h-12 w-20">
-        <Link href="/">
+      <Link href="/">
+        <div className="svg-primary relative h-12 w-20">
           <Image
-            src="icons/mosque.svg"
+            src="/icons/mosque.svg"
             alt="prayer website"
             fill
             className="left-0 top-0 h-20"
+            priority
           />
-        </Link>
-      </div>
+        </div>
+      </Link>
     </header>
   )
 }

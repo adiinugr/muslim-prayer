@@ -56,7 +56,7 @@ type Props = {}
 
 export default function PrayerTimesCities({}: Props) {
   return (
-    <Layout>
+    <Layout headTitle="Prayer Times Cities">
       <div className="mt-16 p-10 rounded-3xl pattern mb-12">
         <h1 className="text-center text-4xl font-bold text-primary-600">
           مواقيت الصلاة في ابها
@@ -65,9 +65,11 @@ export default function PrayerTimesCities({}: Props) {
 
       <div>
         <div className="mt-6 mb-10">
-          <div className="pattern-2 rounded-3xl p-12 mb-4">
+          <div className="pattern-2 rounded-3xl p-12 mb-4 text-center">
             <div className="text-cream text-3xl mb-3">الفجْر</div>
-            <div className="text-white text-6xl font-bold mb-3">04:56:31</div>
+            <div className="text-white text-5xl lg:text-6xl font-bold mb-3">
+              04:56:31
+            </div>
             <div className="text-cream text-lg">الوقت المتبقي لأذان الفجْر</div>
           </div>
         </div>
@@ -76,21 +78,21 @@ export default function PrayerTimesCities({}: Props) {
       <div>
         <h3 className="title text-primary-600">مدن قريبة في إندونيسيا</h3>
         <p>
-          مواقيت الصلاة اليوم في مدينة <span className="font-bold">ابها</span>{" "}
+          مواقيت الصلاة اليوم في مدينة <span className="font-bold">ابها</span>
           تبداء الساعة <span className="font-bold">٥:٠٧ ص</span> بوقت صلاة الفجر
           وتنتهي الساعة <span className="font-bold">٧:٤٩ م</span> لصلاة العشاء.
           وبنسبة إلى عدد ساعات الصيام لهذا اليوم فأنها 13 ساعة و12 دقيقة.
         </p>
         <p>
-          في الوقت الحالي الصلاة القادمة هي صلاة{" "}
+          في الوقت الحالي الصلاة القادمة هي صلاة
           <span className="font-bold">العِشاء</span> حسب التوقيت المحلي في مدينة
           <span className="font-bold">ابها</span>، وسيتم تشغيل صوت الأذان
-          تلقائيً لصلاة العِشاء عبر الموقع الإلكتروني الساعة{" "}
+          تلقائيً لصلاة العِشاء عبر الموقع الإلكتروني الساعة
           <span className="font-bold">٧:٤٩ م</span>.
         </p>
 
-        <div className="flex gap-10 mt-12 text-justify">
-          <div className="w-1/3">
+        <div className="flex flex-col lg:flex-row gap-10 mt-12 text-justify">
+          <div className="w-full lg:w-1/3">
             <table className="prayer-adzan-table table-auto w-full">
               <thead>
                 <tr>
@@ -126,7 +128,7 @@ export default function PrayerTimesCities({}: Props) {
               </tbody>
             </table>
           </div>
-          <div>
+          <div className="w-full lg:w-auto">
             <table className="prayer-details-table table-auto">
               <tbody>
                 <tr>
@@ -175,17 +177,20 @@ export default function PrayerTimesCities({}: Props) {
           </div>
         </div>
 
-        <div className="card mt-10 px-0">
+        <div className="card mt-10 px-0 overflow-auto">
           <table className="w-full prayer-time-table table-auto">
             <thead>
               <tr>
-                <th>2023 مارس</th> <th>الفجْر</th> <th>الشروق</th>{" "}
-                <th>الظُّهْر</th> <th>العَصر</th> <th>المَغرب</th>{" "}
-                <th>العِشاء</th>{" "}
+                <th>2023 مارس</th>
+                <th>الفجْر</th>
+                <th>الشروق</th>
+                <th>الظُّهْر</th>
+                <th>العَصر</th>
+                <th>المَغرب</th>
+                <th>العِشاء</th>
               </tr>
             </thead>
             <tbody>
-              {" "}
               <tr>
                 <td>11 السبت</td>
                 <td>5:07 AM</td>
@@ -194,7 +199,7 @@ export default function PrayerTimesCities({}: Props) {
                 <td>3:43 PM</td>
                 <td>6:19 PM</td>
                 <td>7:49 PM</td>
-              </tr>{" "}
+              </tr>
               <tr>
                 <td>12 الأحد</td>
                 <td>5:07 AM</td>
@@ -203,7 +208,7 @@ export default function PrayerTimesCities({}: Props) {
                 <td>3:43 PM</td>
                 <td>6:19 PM</td>
                 <td>7:49 PM</td>
-              </tr>{" "}
+              </tr>
               <tr>
                 <td>13 الاثنين</td>
                 <td>5:06 AM</td>
@@ -212,7 +217,7 @@ export default function PrayerTimesCities({}: Props) {
                 <td>3:42 PM</td>
                 <td>6:19 PM</td>
                 <td>7:49 PM</td>
-              </tr>{" "}
+              </tr>
               <tr>
                 <td>14 الثلاثاء</td>
                 <td>5:05 AM</td>
@@ -221,7 +226,7 @@ export default function PrayerTimesCities({}: Props) {
                 <td>3:42 PM</td>
                 <td>6:19 PM</td>
                 <td>7:49 PM</td>
-              </tr>{" "}
+              </tr>
               <tr>
                 <td>15 الأربعاء</td>
                 <td>5:04 AM</td>
@@ -230,7 +235,7 @@ export default function PrayerTimesCities({}: Props) {
                 <td>3:42 PM</td>
                 <td>6:20 PM</td>
                 <td>7:50 PM</td>
-              </tr>{" "}
+              </tr>
               <tr>
                 <td>16 الخميس</td>
                 <td>5:03 AM</td>
@@ -239,7 +244,7 @@ export default function PrayerTimesCities({}: Props) {
                 <td>3:42 PM</td>
                 <td>6:20 PM</td>
                 <td>7:50 PM</td>
-              </tr>{" "}
+              </tr>
               <tr>
                 <td>17 الجمعة</td>
                 <td>5:03 AM</td>
@@ -248,7 +253,7 @@ export default function PrayerTimesCities({}: Props) {
                 <td>3:41 PM</td>
                 <td>6:20 PM</td>
                 <td>7:50 PM</td>
-              </tr>{" "}
+              </tr>
               <tr>
                 <td>18 السبت</td>
                 <td>5:02 AM</td>
@@ -257,7 +262,7 @@ export default function PrayerTimesCities({}: Props) {
                 <td>3:41 PM</td>
                 <td>6:20 PM</td>
                 <td>7:50 PM</td>
-              </tr>{" "}
+              </tr>
               <tr>
                 <td>19 الأحد</td>
                 <td>5:01 AM</td>
@@ -266,7 +271,7 @@ export default function PrayerTimesCities({}: Props) {
                 <td>3:41 PM</td>
                 <td>6:21 PM</td>
                 <td>7:51 PM</td>
-              </tr>{" "}
+              </tr>
               <tr>
                 <td>20 الاثنين</td>
                 <td>5:00 AM</td>
@@ -275,7 +280,7 @@ export default function PrayerTimesCities({}: Props) {
                 <td>3:40 PM</td>
                 <td>6:21 PM</td>
                 <td>7:51 PM</td>
-              </tr>{" "}
+              </tr>
             </tbody>
           </table>
         </div>
